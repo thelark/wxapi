@@ -1,10 +1,11 @@
 package wxapi
 
 import (
-	"github.com/thelark/request"
 	"encoding/json"
 	"fmt"
 	"reflect"
+
+	"github.com/thelark/request"
 )
 
 type cgiBinWXAApp struct {

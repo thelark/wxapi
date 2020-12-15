@@ -1,11 +1,12 @@
 package wxapi
 
 import (
-	"github.com/thelark/request"
 	"fmt"
 	"path"
 	"runtime"
 	"strings"
+
+	"github.com/thelark/request"
 )
 
 const (
@@ -19,8 +20,6 @@ const (
 	wxSzApiUrl = "sz.api.weixin.qq.com"
 	// 香港域名 - 使用该域名将访问香港的接入点
 	wxXgApiUrl = "hk.api.weixin.qq.com"
-
-	wxOpenUrl = "open.weixin.qq.com"
 )
 
 var wxRequest = request.New(wxApiUrl)

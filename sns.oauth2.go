@@ -1,8 +1,8 @@
 package wxapi
 
 import (
-	"github.com/thelark/request"
 	"fmt"
+	"github.com/thelark/request"
 	"reflect"
 )
 
@@ -18,6 +18,16 @@ func (t *snsOAuth2) set(k, v string) {
 		_field := _value.FieldByName(k)
 		_field.SetString(v)
 	}
+}
+
+// 子节点 --------------------------------------------------------------------
+func (t *snsOAuth2) Component(opts ...option) *snsOAuth2Component {
+	self := &snsOAuth2Component{}
+	self.AppID = t.AppID
+	for _, opt := range opts {
+		opt(self)
+	}
+	return self
 }
 
 // 方法 --------------------------------------------------------------------
