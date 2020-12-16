@@ -65,7 +65,7 @@ func (t *cgiBinComponent) ApiComponentToken() (*cgiBinComponentApiComponentToken
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/api_component_token", getBasePath()),
 		request.WithBody(body),
 		request.WithResponse(&rsp),
@@ -93,7 +93,7 @@ func (t *cgiBinComponent) ApiCreatePreAuthCode() (*cgiBinComponentApiCreatePreAu
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/api_create_preauthcode", getBasePath()),
 		request.WithParam("component_access_token", t.ComponentAccessToken),
 		request.WithBody(body),
@@ -130,7 +130,7 @@ func (t *cgiBinComponent) ApiQueryAuth() (*cgiBinComponentApiQueryAuth, error) {
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/api_query_auth", getBasePath()),
 		request.WithParam("component_access_token", t.ComponentAccessToken),
 		request.WithBody(body),
@@ -159,7 +159,7 @@ func (t *cgiBinComponent) ApiAuthorizerToken() (*cgiBinComponentApiAuthorizerTok
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/api_authorizer_token", getBasePath()),
 		request.WithParam("component_access_token", t.ComponentAccessToken),
 		request.WithBody(body),
@@ -214,7 +214,7 @@ func (t *cgiBinComponent) ApiGetAuthorizerInfo() (*cgiBinComponentApiGetAuthoriz
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/api_get_authorizer_info", getBasePath()),
 		request.WithParam("component_access_token", t.ComponentAccessToken),
 		request.WithBody(body),
@@ -243,7 +243,7 @@ func (t *cgiBinComponent) ApiGetAuthorizerOption() (*cgiBinComponentApiGetAuthor
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/api_get_authorizer_option", getBasePath()),
 		request.WithParam("component_access_token", t.ComponentAccessToken),
 		request.WithBody(body),
@@ -269,7 +269,7 @@ func (t *cgiBinComponent) ApiSetAuthorizerOption() (*cgiBinComponentApiSetAuthor
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/api_set_authorizer_option", getBasePath()),
 		request.WithParam("component_access_token", t.ComponentAccessToken),
 		request.WithBody(body),
@@ -301,7 +301,7 @@ func (t *cgiBinComponent) ApiGetAuthorizerList() (*cgiBinComponentApiGetAuthoriz
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/api_get_authorizer_list", getBasePath()),
 		request.WithParam("component_access_token", t.ComponentAccessToken),
 		request.WithBody(body),
@@ -327,7 +327,7 @@ func (t *cgiBinComponent) ClearQuota() (*cgiBinComponentClearQuota, error) {
 	if err != nil {
 		return nil, err
 	}
-	if err := wxRequest.Get(
+	if err := wxRequest.Post(
 		fmt.Sprintf("%s/clear_quota", getBasePath()),
 		request.WithParam("component_access_token", t.ComponentAccessToken),
 		request.WithBody(body),
