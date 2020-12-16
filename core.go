@@ -77,6 +77,33 @@ func WithComponentAccessToken(componentAccessToken string) option {
 	}
 }
 
+func WithComponentAppSecret(componentAppSecret string) option {
+	return func(self api) {
+		self.set("ComponentAppSecret", componentAppSecret)
+	}
+}
+
+func WithRedirectUri(redirectUri string) option {
+	return func(self api) {
+		self.set("RedirectUri", redirectUri)
+	}
+}
+func WithScope(scope string) option {
+	return func(self api) {
+		self.set("Scope", scope)
+	}
+}
+func WithState(state string) option {
+	return func(self api) {
+		self.set("State", state)
+	}
+}
+func WithComponentVerifyTicket(componentVerifyTicket string) option {
+	return func(self api) {
+		self.set("ComponentVerifyTicket", componentVerifyTicket)
+	}
+}
+
 // 根据文件名称获取请求路由
 func getBasePath() string {
 	_, file, _, ok := runtime.Caller(1)

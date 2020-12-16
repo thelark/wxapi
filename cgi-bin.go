@@ -1,10 +1,11 @@
 package wxapi
 
 import (
-	"github.com/thelark/request"
 	"encoding/json"
 	"fmt"
 	"reflect"
+
+	"github.com/thelark/request"
 )
 
 type cgiBin struct {
@@ -139,6 +140,13 @@ func (t *cgiBin) User(opts ...option) *cgiBinUser {
 func (t *cgiBin) WXAApp(opts ...option) *cgiBinWXAApp {
 	self := &cgiBinWXAApp{}
 	self.AccessToken = t.AccessToken
+	for _, opt := range opts {
+		opt(self)
+	}
+	return self
+}
+func (t *cgiBin) Component(opts ...option) *cgiBinComponent {
+	self := &cgiBinComponent{}
 	for _, opt := range opts {
 		opt(self)
 	}
