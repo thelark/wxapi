@@ -66,6 +66,16 @@ func WithAccessToken(accessToken string) option {
 		self.set("AccessToken", accessToken)
 	}
 }
+func WithComponentAppID(componentAppID string) option {
+	return func(self api) {
+		self.set("ComponentAppID", componentAppID)
+	}
+}
+func WithComponentAccessToken(componentAccessToken string) option {
+	return func(self api) {
+		self.set("ComponentAccessToken", componentAccessToken)
+	}
+}
 
 // 根据文件名称获取请求路由
 func getBasePath() string {
