@@ -1,9 +1,10 @@
 package wxapi
 
 import (
-	"github.com/thelark/request"
 	"fmt"
 	"reflect"
+
+	"github.com/thelark/request"
 )
 
 type sns struct {
@@ -25,6 +26,14 @@ func (t *sns) OAuth2(opts ...option) *snsOAuth2 {
 	self := &snsOAuth2{}
 	self.AppID = t.AppID
 	self.AppSecret = t.AppSecret
+	for _, opt := range opts {
+		opt(self)
+	}
+	return self
+}
+func (t *sns) Component(opts ...option) *snsComponent {
+	self := &snsComponent{}
+	self.AppID = t.AppID
 	for _, opt := range opts {
 		opt(self)
 	}
